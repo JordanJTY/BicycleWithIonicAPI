@@ -5,8 +5,11 @@ import java.util.List;
 import com.jordan.bicycles.entity.models.Bicycle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.jordan.bicycles.entity.dao.IBicycleDao;
 
+@CrossOrigin(origins = "*")
 @Service
 public class BicycleServiceImpl implements IBicycleService {
 

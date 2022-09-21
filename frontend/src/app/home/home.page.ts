@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BicyclesService } from '../services/bicycles.service';
+import { AppBicycle } from '../interfaces/app-bicycle';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  bicycle: Array<AppBicycle>= [
+    
+  ];
+
+  constructor(private bicyclesService: BicyclesService ) {}
+  
+  getAllBicycles(){
+    this.bicyclesService.getAllBicycles().subscribe(data => {
+      this.bicycle = data;
+    });
+  }
 
 }
