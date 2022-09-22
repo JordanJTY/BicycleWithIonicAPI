@@ -9,16 +9,15 @@ import { AppBicycle } from '../interfaces/app-bicycle';
 })
 export class HomePage {
 
-  bicycle: Array<AppBicycle>= [
-    
-  ];
+  bicycle: Array<AppBicycle> = [];
 
-  constructor(private bicyclesService: BicyclesService ) {}
-  
-  getAllBicycles(){
+  constructor(private bicyclesService: BicyclesService) {
+    this.getAllBicycles();
+  }
+
+  getAllBicycles() {
     this.bicyclesService.getAllBicycles().subscribe(data => {
       this.bicycle = data;
     });
   }
-
 }
